@@ -3,6 +3,7 @@ modal bot
 OPTION
 
 Name | value | default | description
+-----|-------|---------|------------
 showHeader | boolean | true | menampilkan header
 showFooter | boolean | false | menampilkan footer
 showClose | boolean | true | menampilkan close button
