@@ -17,16 +17,16 @@ submitEvent | function | function(e){} | function called when submit
 hideSubmit | boolean | false | determinate if hideEvent called after submit
 hiddenSubmit | boolean | false |  determinate if hiddenEvent called after submit
 bodyHtml | string | "test" |  the modal body
-bClose | string| '<button type="button" class="btn btn-default" data-dismiss="modal"></button>' | 
-bSubmit | string| '<button type="button" class="btn btn-default" data-dismiss="modal"></button>' | 
-modalContainer | string| '<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>' | 
-modalDialog | string| '<div class="modal-dialog" role="document"></div>' | 
-modalContent | string| '<div class="modal-content"></div>' | 
-modalHeader | string| '<div class="modal-header"></div>' | 
-modalBody | string | '<div class="modal-body"></div>' | 
-modalFooter | string| '<div class="modal-footer"></div>' | 
-headerHtml | string| '<h4 class="modal-title">Modal title</h4>' | 
-headerClose | string| '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' | 
+bClose | string| `<button type="button" class="btn btn-default" data-dismiss="modal"></button>` | 
+bSubmit | string| `<button type="button" class="btn btn-default" data-dismiss="modal"></button>` | 
+modalContainer | string| `<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>` | 
+modalDialog | string| `<div class="modal-dialog" role="document"></div>` | 
+modalContent | string| `<div class="modal-content"></div>` | 
+modalHeader | string| `<div class="modal-header"></div>` | 
+modalBody | string | `<div class="modal-body"></div>` | 
+modalFooter | string| `<div class="modal-footer"></div>` | 
+headerHtml | string| `<h4 class="modal-title">Modal title</h4>` | 
+headerClose | string| `<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>` | 
 
 You can call the following method:
 
