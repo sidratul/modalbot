@@ -17,6 +17,7 @@ var Modalbot
 			hideSubmit : false, 
 			hiddenSubmit : false, 
 			bodyHtml : "", 
+			modalWidth : "normal",
 			bClose : '<button type="button" class="btn btn-default" data-dismiss="modal"></button>',
 			bSubmit : '<button type="button" class="btn btn-default" data-dismiss="modal"></button>',
 			modalContainer : '<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>',
@@ -77,23 +78,30 @@ var Modalbot
 	}
 
 	Modalbot.prototype.generate = function(opts) {
-		if(typeof opts !== "undefined") $.extend(this.options,opts)
+		if(typeof opts !== "undefined") $.extend(this.options,opts);
 
 		var contentEl = [],footerEl = []
-		this.elements.modal.append(this.elements.modalDialog)
-		this.elements.modalHeader.append(this.elements.headerClose,this.elements.headerHtml)
-		this.elements.modalDialog.append(this.elements.modalContent)
+
+		this.elements.modalDialog.attr("class","modal-dialog")
+
+		if(this.options.modalWidth.match(/large/i)) this.elements.modalDialog.addClass("modal-lg")
+		else if(this.options.modalWidth.match(/small/i)) this.elements.modalDialog.addClass("modal-sm")
+
+		this.elements.modal.html(this.elements.modalDialog)
+		this.elements.modalHeader.html(this.elements.headerClose,this.elements.headerHtml)	
+		this.elements.modalDialog.html(this.elements.modalContent)
+
 		if(this.options.showHeader) contentEl[0] = this.elements.modalHeader
 		if(this.options.showFooter) contentEl[2] = this.elements.modalFooter
 		contentEl[1] = this.elements.modalBody
 
-		if(!this.options.showHeader && !this.options.showFooter) this.elements.modalBody.append(this.elements.headerClose)
+		if(!this.options.showHeader && !this.options.showFooter) this.elements.modalBody.html(this.elements.headerClose)
 		this.elements.modalBody.html(this.options.bodyHtml)
-		this.elements.modalContent.append(contentEl)
+		this.elements.modalContent.html(contentEl)
 
 		if(this.options.showClose) footerEl[0] = this.elements.bClose
 		if(this.options.showSubmit) footerEl[1] = this.elements.bSubmit
-		this.elements.modalFooter.append(footerEl)
+		this.elements.modalFooter.html(footerEl)
 
 		this.elements.bClose.html(this.options.closeLabel)
 		this.elements.bSubmit.html(this.options.submitLabel)

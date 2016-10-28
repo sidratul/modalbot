@@ -17,6 +17,7 @@ submitEvent | function | function(e){} | function called when submit
 hideSubmit | boolean | false | determinate if hideEvent called after submit
 hiddenSubmit | boolean | false |  determinate if hiddenEvent called after submit
 bodyHtml | string | "" |  the modal body
+modalWidth | string (large,normal,small) | "normal" |  the modal body
 bClose | string| `<button type="button" class="btn btn-default" data-dismiss="modal"></button>` | 
 bSubmit | string| `<button type="button" class="btn btn-default" data-dismiss="modal"></button>` | 
 modalContainer | string| `<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>` | 

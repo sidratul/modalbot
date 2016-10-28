@@ -13,7 +13,11 @@
 		var modalbot = new Modalbot({
 			bodyHtml : "this is body"
 		})
-		modalbot.show("this is other message")
+
+		modalbot.generate({
+			showHeader :false,
+			modalWidth : "small"
+		}).show("this is other message")
 	</script>
 </body>
 </html>
