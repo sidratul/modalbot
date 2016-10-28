@@ -16,7 +16,7 @@ hiddenEvent | function| function(e){} | function called when hidden
 submitEvent | function | function(e){} | function called when submit
 hideSubmit | boolean | false | determinate if hideEvent called after submit
 hiddenSubmit | boolean | false |  determinate if hiddenEvent called after submit
-bodyHtml | string | "test" |  the modal body
+bodyHtml | string | "" |  the modal body
 bClose | string| `<button type="button" class="btn btn-default" data-dismiss="modal"></button>` | 
 bSubmit | string| `<button type="button" class="btn btn-default" data-dismiss="modal"></button>` | 
 modalContainer | string| `<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>` | 
@@ -31,6 +31,6 @@ headerClose | string| `<button type="button" class="close" data-dismiss="modal" 
 You can call the following method:
 
 * `generate(options)` : generate or regenerate modal object and its event but not yet showm
-* `show(options)` : show modal
+* `show(body)` : show modal. body parameter can be empty. default : bodyHtml 
 * `hide()` : hide modal
 * `updateHandler()` : see bootsrap modal updateHandler method

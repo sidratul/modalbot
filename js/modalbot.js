@@ -16,7 +16,7 @@ var Modalbot
 			submitEvent : function(e){},
 			hideSubmit : false, 
 			hiddenSubmit : false, 
-			bodyHtml : "test", 
+			bodyHtml : "", 
 			bClose : '<button type="button" class="btn btn-default" data-dismiss="modal"></button>',
 			bSubmit : '<button type="button" class="btn btn-default" data-dismiss="modal"></button>',
 			modalContainer : '<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>',
@@ -77,6 +77,8 @@ var Modalbot
 	}
 
 	Modalbot.prototype.generate = function(opts) {
+		if(typeof opts !== "undefined") $.extend(this.options,opts)
+
 		var contentEl = [],footerEl = []
 		this.elements.modal.append(this.elements.modalDialog)
 		this.elements.modalHeader.append(this.elements.headerClose,this.elements.headerHtml)
@@ -86,7 +88,7 @@ var Modalbot
 		contentEl[1] = this.elements.modalBody
 
 		if(!this.options.showHeader && !this.options.showFooter) this.elements.modalBody.append(this.elements.headerClose)
-		this.elements.modalBody.append(this.options.bodyHtml)
+		this.elements.modalBody.html(this.options.bodyHtml)
 		this.elements.modalContent.append(contentEl)
 
 		if(this.options.showClose) footerEl[0] = this.elements.bClose
@@ -100,7 +102,9 @@ var Modalbot
 		return this
 	};
 
-	Modalbot.prototype.show = function() {
+	Modalbot.prototype.show = function(body) {
+		if(typeof body == "undefined") this.elements.modalBody.html(this.options.bodyHtml) 
+		else this.elements.modalBody.html(body) 
 		this.elements.modal.modal('show')
 		return this
 	}
