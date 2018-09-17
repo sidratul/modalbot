@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
 </head>
 <body>
-
+	<button id="example1">Button 1</button>
 	<script type="text/javascript" src="dist/js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/modalbot.js"></script>
@@ -13,11 +13,17 @@
 		var modalbot = new Modalbot({
 			bodyHtml : "this is body"
 		})
+		
+		// modalbot.generate({
+		// 	showHeader :false,
+		// 	modalWidth : "small"
+		// }).body("this is other message").show()
 
-		modalbot.generate({
-			showHeader :false,
-			modalWidth : "small"
-		}).show("this is other message")
+		$("#example1").click(function(e){
+			modalbot.body("this is other message").title("example 1").showEvent(function(e){
+				console.log('muncul');
+			}).show();
+		})
 	</script>
 </body>
 </html>
