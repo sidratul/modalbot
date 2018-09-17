@@ -137,7 +137,7 @@ var Modalbot
 	}
 
 	Modalbot.prototype.hideEvent = function(hf){
-		this.elements.modal.on("show.bs.modal",function(e){
+		this.elements.modal.on("hide.bs.modal",function(e){
 			$(this).off('hide.bs.modal');
 			hf(e)
 		});
