@@ -30,8 +30,11 @@ headerHtml | string| `<h4 class="modal-title">Modal title</h4>` |
 headerClose | string| `<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>` | 
 
 You can call the following method:
-
 * `generate(options)` : generate or regenerate modal object and its event but not yet showm
-* `show(body)` : show modal. body parameter can be empty. default : bodyHtml 
+* `showEvent(f)` : set show event. run on event show.bs.modal
+* `hideEvent(f)` : set hide event. run on event hide.bs.modal
+* `title(tite)` : set title on header.  
+* `body(body)` : set body to modal. 
+* `show()` : show modal. 
 * `hide()` : hide modal
 * `updateHandler()` : see bootsrap modal updateHandler method
